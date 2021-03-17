@@ -1,0 +1,32 @@
+<div class="container">
+  <p>Hello list!</p>
+  <div class="row">
+    <div class="col-3" *ngFor="let hero of heroes">
+      <img [src]="hero.image" class="img-thumbnail" alt="">
+      <p>
+        <strong>{{hero.name}}</strong>
+      </p>
+      <p *ngIf="hero.skills != undefined">Skill :
+        <ng-container *ngFor="let ski of hero.skills">
+          <span class="badge bg-secondary">{{ski.name}}</span>
+        </ng-container>
+
+      </p>
+
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-3" *ngFor="let monte of monster">
+      <span>Quái vật : {{monte.name}}</span>
+      <img class="img-thumbnail" [src]="monte.image" alt="">
+      <p>Detail : {{monte.detail}}</p>
+      <p *ngIf="monte.skills != undefined">Spells :
+        <ng-container *ngFor="let spe of monte.skills">
+          <span class="badge bg-secondary">{{spe.spells}}</span>
+        </ng-container>
+
+      </p>
+    </div>
+  </div>
+</div>
